@@ -1,12 +1,15 @@
+# Base image
 FROM n8nio/n8n
 
-# Optional: Set basic auth
-ENV N8N_BASIC_AUTH_ACTIVE=true
-ENV N8N_BASIC_AUTH_USER=admin
-ENV N8N_BASIC_AUTH_PASSWORD=HoodStar@35_
+# Set environment variables
+ENV N8N_BASIC_AUTH_ACTIVE=true \
+    N8N_BASIC_AUTH_USER=teddymazuri@35 \
+    N8N_BASIC_AUTH_PASSWORD=HoodStar@35! \
+    N8N_HOST=n8n.onrender.com \
+    WEBHOOK_TUNNEL_URL=https://n8n.onrender.com \
+    API_FOOTBALL_KEY=7cee6e951915ba76c8b0fc3ae12a1538 \
+    OPENWEATHERMAP_KEY=fd4468959fb8baa234a8aec3ac661d41 \
+    NOTIFY_EMAIL=teddymazuri@gmail.com
 
-# Optional: Set webhook URL if known
-# ENV WEBHOOK_URL=https://your-subdomain.onrender.com/
-
-# Optional: Disable telemetry (optional)
-# ENV N8N_DIAGNOSTICS_ENABLED=false
+# Start n8n
+CMD ["n8n"]
